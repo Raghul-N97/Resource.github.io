@@ -1,0 +1,1327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WhatsApp Lead Qualification AI — SOP</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --green: #25D366;
+    --green-dark: #128C7E;
+    --green-light: #DCF8C6;
+    --green-mid: #075E54;
+    --ink: #111827;
+    --ink-mid: #374151;
+    --ink-soft: #6B7280;
+    --surface: #F9FAFB;
+    --surface-2: #F3F4F6;
+    --border: #E5E7EB;
+    --white: #FFFFFF;
+    --amber: #F59E0B;
+    --amber-light: #FEF3C7;
+    --coral: #EF4444;
+    --coral-light: #FEE2E2;
+    --blue: #3B82F6;
+    --blue-light: #EFF6FF;
+    --purple: #8B5CF6;
+    --purple-light: #EDE9FE;
+    --radius-sm: 6px;
+    --radius-md: 10px;
+    --radius-lg: 16px;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 400;
+    color: var(--ink);
+    background: var(--surface);
+    line-height: 1.7;
+    font-size: 15px;
+  }
+
+  /* HEADER */
+  .header {
+    background: var(--green-mid);
+    color: white;
+    padding: 56px 48px 48px;
+    position: relative;
+    overflow: hidden;
+  }
+  .header::before {
+    content: '';
+    position: absolute;
+    top: -80px; right: -80px;
+    width: 360px; height: 360px;
+    border-radius: 50%;
+    background: rgba(37,211,102,0.12);
+  }
+  .header::after {
+    content: '';
+    position: absolute;
+    bottom: -40px; left: 40%;
+    width: 220px; height: 220px;
+    border-radius: 50%;
+    background: rgba(37,211,102,0.07);
+  }
+  .header-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(37,211,102,0.2);
+    border: 1px solid rgba(37,211,102,0.3);
+    color: #86efac;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 5px 12px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+  }
+  .header h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 38px;
+    font-weight: 400;
+    line-height: 1.2;
+    color: white;
+    max-width: 660px;
+    margin-bottom: 14px;
+    position: relative;
+  }
+  .header h1 em {
+    font-style: italic;
+    color: var(--green);
+  }
+  .header-sub {
+    color: rgba(255,255,255,0.65);
+    font-size: 15px;
+    max-width: 560px;
+    margin-bottom: 32px;
+    position: relative;
+  }
+  .header-meta {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+    position: relative;
+  }
+  .meta-pill {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.15);
+    padding: 7px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    color: rgba(255,255,255,0.85);
+  }
+  .meta-pill .dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: var(--green);
+  }
+
+  /* AFFILIATE DISCLOSURE */
+  .affiliate-disclosure {
+    background: #FFFBEB;
+    border-left: 4px solid #D97706;
+    border-bottom: 1px solid #FDE68A;
+    padding: 14px 32px;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-size: 13px;
+    color: #78350F;
+  }
+  .affiliate-disclosure .disc-icon {
+    font-size: 16px;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+  .affiliate-disclosure strong { color: #92400E; font-weight: 600; }
+  .affiliate-disclosure a { color: #92400E; text-decoration: underline; }
+
+  /* PROBLEM BANNER */
+  .problem-banner {
+    background: #FFF7ED;
+    border-left: 4px solid var(--amber);
+    padding: 20px 32px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .problem-icon {
+    font-size: 28px;
+    flex-shrink: 0;
+  }
+  .problem-banner strong { color: #92400E; font-weight: 600; }
+  .problem-banner p { color: #78350F; font-size: 14px; }
+
+  /* MAIN */
+  .main { max-width: 880px; margin: 0 auto; padding: 0 32px 64px; }
+
+  /* SECTION HEADERS */
+  .section-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 48px 0 20px;
+  }
+  .section-num {
+    width: 32px; height: 32px;
+    background: var(--green);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 600;
+    flex-shrink: 0;
+  }
+  .section-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: 22px;
+    font-weight: 400;
+  }
+
+  /* FLOW DIAGRAM */
+  .flow-diagram {
+    display: flex;
+    align-items: stretch;
+    gap: 0;
+    margin: 24px 0;
+    overflow-x: auto;
+  }
+  .flow-step {
+    flex: 1;
+    min-width: 120px;
+    padding: 18px 16px;
+    background: white;
+    border: 1px solid var(--border);
+    position: relative;
+    text-align: center;
+  }
+  .flow-step:first-child { border-radius: var(--radius-md) 0 0 var(--radius-md); }
+  .flow-step:last-child  { border-radius: 0 var(--radius-md) var(--radius-md) 0; }
+  .flow-step:not(:last-child)::after {
+    content: '→';
+    position: absolute;
+    right: -14px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--green);
+    font-size: 18px;
+    font-weight: 700;
+    z-index: 1;
+    background: white;
+    padding: 0 2px;
+  }
+  .flow-step .step-icon { font-size: 24px; margin-bottom: 8px; }
+  .flow-step .step-label {
+    font-size: 12px; font-weight: 600;
+    color: var(--ink-mid); line-height: 1.3;
+  }
+  .flow-step .step-sub {
+    font-size: 10px; color: var(--ink-soft);
+    margin-top: 4px; line-height: 1.3;
+  }
+  .flow-step.active-step { background: var(--green-light); border-color: var(--green); }
+  .flow-step.active-step .step-label { color: var(--green-dark); }
+
+  /* INTENT CARDS */
+  .intent-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin: 20px 0;
+  }
+  .intent-card {
+    padding: 18px 20px;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border);
+    background: white;
+  }
+  .intent-card .intent-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 3px 10px;
+    border-radius: 12px;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 10px;
+  }
+  .intent-card.buy .intent-tag   { background: #DCFCE7; color: #166534; }
+  .intent-card.price .intent-tag { background: var(--blue-light); color: #1E40AF; }
+  .intent-card.support .intent-tag { background: var(--amber-light); color: #92400E; }
+  .intent-card.spam .intent-tag  { background: var(--coral-light); color: #991B1B; }
+  .intent-card .intent-title { font-weight: 600; font-size: 14px; margin-bottom: 6px; color: var(--ink); }
+  .intent-card .intent-desc  { font-size: 13px; color: var(--ink-soft); line-height: 1.5; }
+  .intent-card .intent-action {
+    margin-top: 10px; font-size: 12px; font-weight: 600;
+    padding: 5px 10px; border-radius: var(--radius-sm); display: inline-block;
+  }
+  .intent-card.buy .intent-action   { background: #DCFCE7; color: #166534; }
+  .intent-card.price .intent-action { background: var(--blue-light); color: #1E40AF; }
+  .intent-card.support .intent-action { background: var(--amber-light); color: #92400E; }
+  .intent-card.spam .intent-action  { background: var(--coral-light); color: #991B1B; }
+
+  /* STEP CARDS */
+  .step-card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 24px 28px;
+    margin-bottom: 16px;
+    position: relative;
+  }
+  .step-card.featured {
+    border-color: var(--green);
+    border-width: 2px;
+  }
+  .step-card-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 16px;
+  }
+  .step-num-big {
+    width: 42px; height: 42px;
+    border-radius: 50%;
+    background: var(--ink);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'DM Serif Display', serif;
+    font-size: 18px;
+    flex-shrink: 0;
+  }
+  .step-num-big.green-num { background: var(--green-dark); }
+  .step-card-title { font-weight: 600; font-size: 16px; color: var(--ink); margin-bottom: 3px; }
+  .step-card-sub { font-size: 13px; color: var(--ink-soft); }
+  .step-card .time-badge {
+    position: absolute;
+    top: 20px; right: 20px;
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 11px;
+    color: var(--ink-soft);
+    font-weight: 500;
+  }
+  .step-body { font-size: 14px; color: var(--ink-mid); line-height: 1.7; }
+  .step-body ul { padding-left: 20px; margin: 10px 0; }
+  .step-body li { margin-bottom: 6px; }
+  .step-body strong { color: var(--ink); font-weight: 600; }
+  .step-body p + p { margin-top: 10px; }
+
+  /* AFFILIATE LINK BUTTON */
+  .aff-link-box {
+    background: var(--green-light);
+    border: 2px solid var(--green);
+    border-radius: var(--radius-md);
+    padding: 18px 22px;
+    margin: 16px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .aff-link-box .aff-text { font-size: 14px; color: var(--green-mid); }
+  .aff-link-box .aff-text strong { color: var(--green-dark); font-weight: 700; font-size: 15px; display: block; margin-bottom: 3px; }
+  .aff-link-box a.aff-btn {
+    background: var(--green-dark);
+    color: white;
+    padding: 10px 22px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    white-space: nowrap;
+    display: inline-block;
+  }
+  .aff-link-box a.aff-btn:hover { background: var(--green-mid); }
+
+  /* PLAN COMPARISON */
+  .plan-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin: 14px 0;
+  }
+  .plan-card {
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: 16px;
+    text-align: center;
+  }
+  .plan-card.recommended {
+    background: white;
+    border-color: var(--green);
+    border-width: 2px;
+  }
+  .plan-card .plan-tag {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--green-dark);
+    background: var(--green-light);
+    padding: 2px 8px;
+    border-radius: 10px;
+    display: inline-block;
+    margin-bottom: 8px;
+  }
+  .plan-card .plan-name { font-weight: 600; font-size: 15px; margin-bottom: 4px; }
+  .plan-card .plan-price { font-size: 22px; font-weight: 700; color: var(--green-dark); margin-bottom: 4px; }
+  .plan-card .plan-ops { font-size: 11px; color: var(--ink-soft); }
+
+  /* HELP CHANNELS */
+  .help-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin: 20px 0;
+  }
+  .help-card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: 18px 20px;
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    text-decoration: none;
+    color: inherit;
+    transition: border-color 0.15s;
+  }
+  .help-card:hover { border-color: var(--green); }
+  .help-card .help-icon {
+    font-size: 26px;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+  .help-card .help-title { font-weight: 600; font-size: 14px; color: var(--ink); margin-bottom: 3px; }
+  .help-card .help-desc  { font-size: 12px; color: var(--ink-soft); line-height: 1.5; }
+  .help-card .help-link  { font-size: 12px; color: var(--green-dark); font-weight: 500; margin-top: 5px; display: block; }
+
+  /* HELP NOTICE */
+  .help-notice {
+    background: var(--blue-light);
+    border: 1px solid #BFDBFE;
+    border-radius: var(--radius-md);
+    padding: 16px 20px;
+    font-size: 13px;
+    color: #1E40AF;
+    margin: 14px 0;
+  }
+  .help-notice strong { font-weight: 600; }
+
+  /* CODE BLOCK */
+  .code-block {
+    background: #0F172A;
+    border-radius: var(--radius-md);
+    padding: 20px 24px;
+    margin: 14px 0;
+    font-family: 'Courier New', monospace;
+    font-size: 13px;
+    line-height: 1.6;
+    overflow-x: auto;
+  }
+
+  /* TOOLS ROW */
+  .tools-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin: 20px 0;
+  }
+  .tool-chip {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: 16px 14px;
+    text-align: center;
+  }
+  .tool-chip .tool-icon { font-size: 26px; margin-bottom: 8px; }
+  .tool-chip .tool-name { font-size: 13px; font-weight: 600; color: var(--ink); margin-bottom: 3px; }
+  .tool-chip .tool-role { font-size: 11px; color: var(--ink-soft); line-height: 1.3; }
+
+  /* ALERT RULES */
+  .alert-rule {
+    display: flex;
+    gap: 14px;
+    padding: 16px 0;
+    border-bottom: 1px solid var(--border);
+    align-items: flex-start;
+  }
+  .alert-rule:last-child { border-bottom: none; }
+  .alert-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--green); margin-top: 6px; flex-shrink: 0; }
+  .alert-dot.hot  { background: var(--coral); }
+  .alert-dot.warm { background: var(--amber); }
+  .alert-rule .rule-title { font-weight: 600; font-size: 14px; margin-bottom: 3px; }
+  .alert-rule .rule-desc  { font-size: 13px; color: var(--ink-soft); }
+
+  /* KPI GRID */
+  .kpi-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 20px 0; }
+  .kpi-card { background: white; border: 1px solid var(--border); border-radius: var(--radius-md); padding: 20px; text-align: center; }
+  .kpi-num  { font-family: 'DM Serif Display', serif; font-size: 32px; color: var(--green-dark); line-height: 1; margin-bottom: 6px; }
+  .kpi-label { font-size: 12px; color: var(--ink-soft); font-weight: 500; text-transform: uppercase; letter-spacing: 0.05em; }
+
+  /* PROMPT BOX */
+  .prompt-box {
+    background: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    border-left: 3px solid var(--purple);
+    border-radius: var(--radius-md);
+    padding: 20px 22px;
+    margin: 14px 0;
+    font-family: 'Courier New', monospace;
+    font-size: 13px;
+    line-height: 1.7;
+    color: #334155;
+    white-space: pre-wrap;
+  }
+  .prompt-box .label {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--purple);
+    margin-bottom: 10px;
+    display: block;
+  }
+
+  /* WHATSAPP BUBBLE */
+  .wa-conversation {
+    background: #E5DDD5;
+    border-radius: var(--radius-lg);
+    padding: 20px;
+    margin: 16px 0;
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23c8b8a2' fill-opacity='0.3'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+  .bubble-row { display: flex; margin-bottom: 10px; }
+  .bubble-row.right { justify-content: flex-end; }
+  .bubble { max-width: 70%; padding: 10px 14px; border-radius: 12px; font-size: 13px; line-height: 1.5; }
+  .bubble.incoming { background: white; border-radius: 0 12px 12px 12px; color: var(--ink); }
+  .bubble.outgoing { background: #DCF8C6; border-radius: 12px 0 12px 12px; color: var(--ink); }
+  .bubble-label { font-size: 10px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; color: var(--ink-soft); margin-bottom: 4px; }
+  .bubble-time  { font-size: 10px; color: var(--ink-soft); text-align: right; margin-top: 4px; }
+
+  /* DIVIDER */
+  .divider { border: none; border-top: 1px solid var(--border); margin: 32px 0; }
+
+  /* TROUBLESHOOT */
+  .faq-item { border-bottom: 1px solid var(--border); padding: 18px 0; }
+  .faq-item:last-child { border-bottom: none; }
+  .faq-q {
+    font-weight: 600; font-size: 14px; color: var(--ink); margin-bottom: 8px;
+    display: flex; gap: 10px; align-items: flex-start;
+  }
+  .faq-q::before {
+    content: 'Q';
+    background: var(--green-mid); color: white;
+    width: 20px; height: 20px; border-radius: 50%;
+    font-size: 10px; font-weight: 700;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0; margin-top: 1px;
+  }
+  .faq-a { font-size: 13px; color: var(--ink-soft); padding-left: 30px; line-height: 1.6; }
+
+  /* CHECKLIST */
+  .checklist { list-style: none; padding: 0; margin: 10px 0; }
+  .checklist li {
+    padding: 8px 12px;
+    border-radius: var(--radius-sm);
+    font-size: 13px;
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    color: var(--ink-mid);
+    border-bottom: 1px solid var(--surface-2);
+  }
+  .checklist li:last-child { border-bottom: none; }
+  .checklist li::before {
+    content: '○';
+    color: var(--green-dark);
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+
+  /* SCENARIO MAP */
+  .scenario-map {
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    margin: 14px 0;
+  }
+  .scenario-map .sm-row {
+    display: flex;
+    align-items: stretch;
+    border-bottom: 1px solid var(--border);
+  }
+  .scenario-map .sm-row:last-child { border-bottom: none; }
+  .scenario-map .sm-num {
+    width: 44px;
+    background: var(--surface-2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 13px;
+    color: var(--ink-soft);
+    flex-shrink: 0;
+    border-right: 1px solid var(--border);
+  }
+  .scenario-map .sm-content { padding: 12px 16px; flex: 1; }
+  .scenario-map .sm-title { font-weight: 600; font-size: 13px; color: var(--ink); margin-bottom: 2px; }
+  .scenario-map .sm-desc  { font-size: 12px; color: var(--ink-soft); }
+  .scenario-map .sm-tag {
+    float: right;
+    font-size: 10px;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 10px;
+    background: var(--blue-light);
+    color: #1E40AF;
+    margin-left: 8px;
+  }
+
+  /* TABLE */
+  .data-table { width: 100%; border-collapse: collapse; font-size: 13px; margin: 14px 0; }
+  .data-table th {
+    background: var(--surface-2);
+    padding: 10px 14px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--ink-soft);
+    border-bottom: 2px solid var(--border);
+  }
+  .data-table td { padding: 10px 14px; border-bottom: 1px solid var(--border); color: var(--ink-mid); vertical-align: top; }
+  .data-table tr:last-child td { border-bottom: none; }
+  .data-table tr:hover td { background: var(--surface); }
+
+  /* CALLOUT */
+  .callout {
+    background: var(--green-light);
+    border: 1px solid #A7F3D0;
+    border-radius: var(--radius-md);
+    padding: 16px 20px;
+    font-size: 13px;
+    color: #065F46;
+    margin: 14px 0;
+  }
+  .callout strong { font-weight: 600; }
+
+  /* FOOTER */
+  .footer {
+    background: var(--ink);
+    color: rgba(255,255,255,0.5);
+    text-align: center;
+    padding: 24px;
+    font-size: 12px;
+  }
+  .footer strong { color: var(--green); }
+  .footer .disc-footer {
+    font-size: 11px;
+    color: rgba(255,255,255,0.35);
+    margin-top: 8px;
+  }
+
+  @media print {
+    .header { background: #075E54 !important; -webkit-print-color-adjust: exact; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER (no score badge) -->
+<div class="header">
+  <div class="header-tag">
+    <span>●</span> Save Time Systems · Sales + CRM
+  </div>
+  <h1>WhatsApp Lead Qualification <em>AI</em> for Small Businesses</h1>
+  <p class="header-sub">Stop losing 40–60% of your leads to slow response times. Let AI pre-qualify every WhatsApp message and alert you only when a lead is hot.</p>
+  <div class="header-meta">
+    <div class="meta-pill"><span class="dot"></span> Weekend MVP build</div>
+    <div class="meta-pill"><span class="dot"></span> WhatsApp API + Make.com + OpenAI</div>
+    <div class="meta-pill"><span class="dot"></span> Direct revenue impact</div>
+  </div>
+</div>
+
+<!-- AFFILIATE DISCLOSURE (prominent, above the fold) -->
+<div class="affiliate-disclosure">
+  <div class="disc-icon">ℹ️</div>
+  <div>
+    <strong>Affiliate Disclosure:</strong> This guide contains affiliate links. If you sign up through these links, we earn a commission at no additional cost to you. We only recommend tools we genuinely believe are valuable, and our recommendations are never influenced by affiliate partnerships.
+  </div>
+</div>
+
+<!-- PROBLEM BANNER -->
+<div class="problem-banner">
+  <div class="problem-icon">⚡</div>
+  <div>
+    <strong>The Problem This Solves</strong>
+    <p>Businesses lose 40–60% of inbound leads because responses are slow, filters are manual, and owners get buried in spam. This system routes, qualifies, and escalates automatically — 24/7.</p>
+  </div>
+</div>
+
+<!-- MAIN CONTENT -->
+<div class="main">
+
+  <!-- HOW IT WORKS -->
+  <div class="section-label">
+    <div class="section-num">→</div>
+    <h2 class="section-title">How the System Works (at a Glance)</h2>
+  </div>
+
+  <div class="flow-diagram">
+    <div class="flow-step">
+      <div class="step-icon">📲</div>
+      <div class="step-label">Message Arrives</div>
+      <div class="step-sub">WhatsApp Business API receives lead</div>
+    </div>
+    <div class="flow-step active-step">
+      <div class="step-icon">🤖</div>
+      <div class="step-label">AI Classifies Intent</div>
+      <div class="step-sub">Buy / Price / Support / Spam</div>
+    </div>
+    <div class="flow-step">
+      <div class="step-icon">💬</div>
+      <div class="step-label">Auto-Reply Sent</div>
+      <div class="step-sub">Structured qualifying questions</div>
+    </div>
+    <div class="flow-step">
+      <div class="step-icon">📊</div>
+      <div class="step-label">Lead Logged</div>
+      <div class="step-sub">Google Sheet / CRM updated</div>
+    </div>
+    <div class="flow-step active-step">
+      <div class="step-icon">🔔</div>
+      <div class="step-label">Owner Alerted</div>
+      <div class="step-sub">Only for hot leads</div>
+    </div>
+  </div>
+
+  <div class="callout">
+    <strong>Result:</strong> You only touch leads that are ready to buy. Everything else is handled, logged, and waiting for you when you check in.
+  </div>
+
+  <!-- TOOLS NEEDED -->
+  <div class="section-label">
+    <div class="section-num">1</div>
+    <h2 class="section-title">Tools You Need (and Why)</h2>
+  </div>
+
+  <div class="tools-grid">
+    <div class="tool-chip">
+      <div class="tool-icon">📱</div>
+      <div class="tool-name">WhatsApp Business API</div>
+      <div class="tool-role">Receives &amp; sends messages</div>
+    </div>
+    <div class="tool-chip">
+      <div class="tool-icon">⚙️</div>
+      <div class="tool-name">Make.com</div>
+      <div class="tool-role">Automation hub (webhook router)</div>
+    </div>
+    <div class="tool-chip">
+      <div class="tool-icon">🧠</div>
+      <div class="tool-name">OpenAI GPT-4o</div>
+      <div class="tool-role">Intent classification + reply generation</div>
+    </div>
+    <div class="tool-chip">
+      <div class="tool-icon">📋</div>
+      <div class="tool-name">Google Sheets / CRM</div>
+      <div class="tool-role">Lead log &amp; pipeline tracking</div>
+    </div>
+  </div>
+
+  <p style="font-size:13px; color: var(--ink-soft); margin-top: 8px;">
+    <strong style="color:var(--ink);">Optional:</strong> Slack / Email for owner alerts. Twilio as WhatsApp API provider. Airtable instead of Google Sheets.
+  </p>
+
+  <!-- SETUP -->
+  <div class="section-label">
+    <div class="section-num">2</div>
+    <h2 class="section-title">Step-by-Step Setup (Weekend Build)</h2>
+  </div>
+
+  <p style="font-size:14px; color:var(--ink-soft); margin-bottom:20px;">Follow these steps in order. Each one builds on the last. Total estimated time: <strong style="color:var(--ink);">3–4 hours</strong> for a first-time builder.</p>
+
+  <!-- ─── STEP 1: Create Make.com Account ─── -->
+  <div class="step-card featured">
+    <div class="time-badge">⏱ 5–10 min</div>
+    <div class="step-card-header">
+      <div class="step-num-big green-num">1</div>
+      <div>
+        <div class="step-card-title">Create Your Make.com Account</div>
+        <div class="step-card-sub">Make.com is the automation engine that connects all the tools in this system</div>
+      </div>
+    </div>
+    <div class="step-body">
+      <p>Make.com is the central hub for this entire workflow. It receives incoming WhatsApp messages via webhook, sends them to OpenAI for classification, routes the result, fires the auto-reply, and logs the lead — all without any code.</p>
+
+      <div class="aff-link-box">
+        <div class="aff-text">
+          <strong>Create your free Make.com account</strong>
+          Start on the free plan — it covers everything you need to build and test this system. No credit card required.
+        </div>
+        <a href="https://www.make.com/en/register?pc=create03" target="_blank" class="aff-btn">Sign Up Free →</a>
+      </div>
+
+      <p style="font-size:12px; color:var(--ink-soft); margin-bottom:14px;">
+        <em>⚠️ Affiliate note: The link above is an affiliate link. We earn a small commission if you sign up — it does not affect your pricing or experience.</em>
+      </p>
+
+      <p><strong>Choose the right plan for your business:</strong></p>
+      <div class="plan-grid">
+        <div class="plan-card">
+          <div class="plan-name">Free</div>
+          <div class="plan-price">$0</div>
+          <div class="plan-ops">1,000 credits/month · 15-min minimum interval · Great for testing</div>
+        </div>
+        <div class="plan-card recommended">
+          <div class="plan-tag">Recommended</div>
+          <div class="plan-name">Core</div>
+          <div class="plan-price">$9/mo</div>
+          <div class="plan-ops">10,000 credits/month · Unlimited scenarios · Access to Make API</div>
+        </div>
+        <div class="plan-card">
+          <div class="plan-name"> Enterprise</div>
+          <div class="plan-price">Custom pricing</div>
+          <div class="plan-ops">10,000 credits/month · Priority execution · Full-text log search</div>
+        </div>
+      </div>
+
+
+      <p><strong>After signing up, here is what to do first:</strong></p>
+      <ul>
+        <li>Log in and go to your <strong>Dashboard</strong> — this is where all your automations (called "Scenarios") live</li>
+        <li>Click your profile icon (top right) → <strong>Profile &amp; Settings</strong> → note your <strong>time zone</strong> and set it to your local time so scheduled triggers fire at the right time</li>
+        <li>Go to <strong>Organization &amp; Teams</strong> → name your organisation (e.g. your business name) so your scenarios are easy to manage</li>
+        <li>Bookmark the Make.com dashboard URL — you will come back here often during setup</li>
+        <li>Optional: Connect your <strong>Google account</strong> now under Connections → this will speed up the Google Sheets integration in Step 5</li>
+      </ul>
+
+      <div class="callout" style="margin-top:14px;">
+        <strong>First-time user tip:</strong> Make.com calls each automation a "Scenario." Each scenario contains a chain of "Modules" (like building blocks). When you click the big + button on your dashboard, you are creating your first Scenario. You will do this in Step 3.
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── STEP 2: WhatsApp Business API ─── -->
+  <div class="step-card">
+    <div class="time-badge">⏱ 30–60 min</div>
+    <div class="step-card-header">
+      <div class="step-num-big">2</div>
+      <div>
+        <div class="step-card-title">Set Up Your WhatsApp Business API</div>
+        <div class="step-card-sub">Get a phone number that can receive and send messages via webhook</div>
+      </div>
+    </div>
+    <div class="step-body">
+      <p>The WhatsApp Business API lets your business number receive messages programmatically — so Make.com can listen to them in real time. Here is how to set it up via Meta for Developers:</p>
+      <ul>
+        <li>Go to <strong>developers.facebook.com</strong> → click <strong>My Apps</strong> → <strong>Create App</strong></li>
+        <li>Select app type <strong>"Business"</strong> → name your app (e.g. "My Business WA Bot") → click Create</li>
+        <li>On the app dashboard, find <strong>WhatsApp</strong> in the product list → click <strong>Set Up</strong></li>
+        <li>Under <strong>API Setup</strong>, you will see a free temporary phone number — use this for testing first</li>
+        <li>Copy your <strong>Temporary Access Token</strong> and <strong>Phone Number ID</strong> — save both somewhere safe (Notepad, Notes app)</li>
+        <li>Scroll to <strong>Webhooks</strong> → click <strong>Configure</strong> → paste your Make.com webhook URL here (you will get this URL in Step 3 — come back to this)</li>
+        <li>In the <strong>Webhook Fields</strong> section, click <strong>Subscribe</strong> next to the <strong>messages</strong> field</li>
+        <li>Click <strong>Verify and Save</strong> — Meta will ping your webhook to confirm it is live</li>
+      </ul>
+
+      <p style="margin-top:10px;"><strong>When you are ready to go live with your real number:</strong></p>
+      <ul>
+        <li>Add a <strong>Payment Method</strong> in your Meta Business account (required to use a permanent number)</li>
+        <li>Go to <strong>Phone Numbers</strong> → <strong>Add Phone Number</strong> → verify via OTP</li>
+        <li>Replace the temporary token with a <strong>Permanent System User Token</strong> from your Meta Business Manager</li>
+      </ul>
+
+      <div class="help-notice">
+        <strong>Having trouble with Meta setup?</strong> Meta's developer interface changes frequently. If anything looks different, search <em>"Meta WhatsApp Cloud API setup 2024"</em> on YouTube for the latest walkthrough — there are dozens of up-to-date video guides.
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── STEP 3: Build Make.com Scenario ─── -->
+  <div class="step-card">
+    <div class="time-badge">⏱ 45 min</div>
+    <div class="step-card-header">
+      <div class="step-num-big">3</div>
+      <div>
+        <div class="step-card-title">Build the Make.com Automation Scenario</div>
+        <div class="step-card-sub">Your central router — this is where all the tools connect together</div>
+      </div>
+    </div>
+    <div class="step-body">
+      <p>In Make.com, go to <strong>Scenarios → Create a new Scenario</strong>. You will build a chain of modules that process every incoming WhatsApp message. Here is the exact module order:</p>
+
+      <div class="scenario-map">
+        <div class="sm-row">
+          <div class="sm-num">M1</div>
+          <div class="sm-content">
+            <div class="sm-title"><span class="sm-tag">Trigger</span> Webhooks → Custom Webhook</div>
+            <div class="sm-desc">Click "Add" → name it "WhatsApp Incoming" → copy the generated URL → paste it into your Meta Webhooks panel from Step 2. This module fires every time a message arrives.</div>
+          </div>
+        </div>
+        <div class="sm-row">
+          <div class="sm-num">M2</div>
+          <div class="sm-content">
+            <div class="sm-title"><span class="sm-tag">Action</span> HTTP → Make a Request (OpenAI)</div>
+            <div class="sm-desc">POST to https://api.openai.com/v1/chat/completions. Pass the incoming message body from M1 as the user message. Add your OpenAI API key in the Authorization header as "Bearer sk-...". Set model to "gpt-4o-mini" for cost efficiency.</div>
+          </div>
+        </div>
+        <div class="sm-row">
+          <div class="sm-num">M3</div>
+          <div class="sm-content">
+            <div class="sm-title"><span class="sm-tag">Tool</span> JSON → Parse JSON</div>
+            <div class="sm-desc">Take the text content from M2's response and parse it as JSON. This gives you clean variables like {{intent}}, {{confidence}}, {{hot_lead}}, and {{suggested_reply}} that you can map in the next modules.</div>
+          </div>
+        </div>
+        <div class="sm-row">
+          <div class="sm-num">M4</div>
+          <div class="sm-content">
+            <div class="sm-title"><span class="sm-tag">Control</span> Router (4 Paths)</div>
+            <div class="sm-desc">Add a Router module → create 4 paths: Path 1 = intent equals "buy" · Path 2 = intent equals "price" · Path 3 = intent equals "support" · Path 4 = intent equals "spam". Each path continues to its own modules below.</div>
+          </div>
+        </div>
+        <div class="sm-row">
+          <div class="sm-num">M5</div>
+          <div class="sm-content">
+            <div class="sm-title"><span class="sm-tag">Action</span> HTTP → Send WhatsApp Reply (per path)</div>
+            <div class="sm-desc">On each relevant path (buy / price / support), use the WhatsApp API to send the qualifying reply template back to the sender's number. Use the Phone Number ID and Access Token from Step 2. Spam path: no reply, skip to logging.</div>
+          </div>
+        </div>
+        <div class="sm-row">
+          <div class="sm-num">M6</div>
+          <div class="sm-content">
+            <div class="sm-title"><span class="sm-tag">Action</span> Google Sheets → Add a Row</div>
+            <div class="sm-desc">On ALL paths, append a row to your lead log sheet. Map: Timestamp → now() · Phone → sender number · Raw Message → original text · Intent → {{intent}} · Confidence → {{confidence}} · Summary → {{summary}} · Hot Lead → {{hot_lead}} · Status → "New".</div>
+          </div>
+        </div>
+        <div class="sm-row">
+          <div class="sm-num">M7</div>
+          <div class="sm-content">
+            <div class="sm-title"><span class="sm-tag">Filter</span> Alert — Buy Path Only</div>
+            <div class="sm-desc">Add a Filter before this module: only continue if {{hot_lead}} equals true. Then add a Slack or Email module to send yourself an instant alert with the lead summary and the sender's phone number.</div>
+          </div>
+        </div>
+      </div>
+
+      <p style="margin-top: 12px;">Once all modules are placed, click <strong>Save</strong> (disk icon, bottom left) → then click <strong>Run Once</strong> to activate listening for a test message.</p>
+    </div>
+  </div>
+
+  <!-- ─── STEP 4: AI Prompt ─── -->
+  <div class="step-card">
+    <div class="time-badge">⏱ 20 min</div>
+    <div class="step-card-header">
+      <div class="step-num-big">4</div>
+      <div>
+        <div class="step-card-title">Configure the AI Classification Prompt</div>
+        <div class="step-card-sub">The brain of the system — paste this exactly into your OpenAI HTTP module</div>
+      </div>
+    </div>
+    <div class="step-body">
+      <p>In Module 2 (the HTTP request to OpenAI), your request body should look like this. Copy the system prompt below into the <strong>system</strong> message field:</p>
+      <div class="prompt-box"><span class="label">System Prompt → OpenAI GPT-4o / GPT-4o Mini</span>You are a lead classifier for a small business WhatsApp inbox.
+
+Analyse the incoming customer message and return ONLY a JSON object:
+{
+  "intent": "buy" | "price" | "support" | "spam",
+  "confidence": 0.0–1.0,
+  "hot_lead": true | false,
+  "summary": "One sentence summary of what the customer wants",
+  "suggested_reply": "A warm, professional reply under 160 characters"
+}
+
+Rules:
+- "buy" = ready to purchase, asking about availability, "I want to order"
+- "price" = asking about cost, packages, discounts — potential buyer
+- "support" = existing customer with an issue or question
+- "spam" = promotional, irrelevant, or gibberish
+- hot_lead = true only when intent is "buy" AND confidence >= 0.8
+
+Respond ONLY with valid JSON. No preamble. No explanation.</div>
+
+      <p><strong>OpenAI HTTP request settings to use in Make.com:</strong></p>
+      <ul>
+        <li><strong>URL:</strong> https://api.openai.com/v1/chat/completions</li>
+        <li><strong>Method:</strong> POST</li>
+        <li><strong>Header:</strong> Authorization: Bearer &lt;your OpenAI API key&gt;</li>
+        <li><strong>Body type:</strong> Raw → JSON</li>
+        <li><strong>model:</strong> "gpt-4o-mini" (cheapest, fast) or "gpt-4o" (most accurate)</li>
+        <li><strong>temperature:</strong> 0.2 (keeps output consistent)</li>
+        <li><strong>max_tokens:</strong> 300</li>
+      </ul>
+      <p style="margin-top: 10px;">In Module 3 (JSON Parse), map <code style="background: var(--surface-2); padding: 2px 6px; border-radius: 4px; font-size: 12px;">{{intent}}</code>, <code style="background: var(--surface-2); padding: 2px 6px; border-radius: 4px; font-size: 12px;">{{hot_lead}}</code>, and <code style="background: var(--surface-2); padding: 2px 6px; border-radius: 4px; font-size: 12px;">{{suggested_reply}}</code> to drive the Router.</p>
+    </div>
+  </div>
+
+  <!-- ─── STEP 5: Google Sheet ─── -->
+  <div class="step-card">
+    <div class="time-badge">⏱ 20 min</div>
+    <div class="step-card-header">
+      <div class="step-num-big">5</div>
+      <div>
+        <div class="step-card-title">Set Up Your Google Sheet Lead Log</div>
+        <div class="step-card-sub">Every qualifying lead gets captured here automatically — no manual entry</div>
+      </div>
+    </div>
+    <div class="step-body">
+      <p>Create a new Google Sheet. Name the first tab <strong>"Leads"</strong>. Add these column headers in Row 1 exactly as written — Make.com will map to them by name:</p>
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Column Header</th>
+            <th>What Goes Here</th>
+            <th>Data Source</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>Timestamp</strong></td><td>Date and time of the message</td><td>Make.com: now()</td></tr>
+          <tr><td><strong>Phone Number</strong></td><td>Sender's WhatsApp number</td><td>Webhook payload: from.phone</td></tr>
+          <tr><td><strong>Raw Message</strong></td><td>Exactly what the customer typed</td><td>Webhook payload: message.text</td></tr>
+          <tr><td><strong>Intent</strong></td><td>buy / price / support / spam</td><td>OpenAI JSON: intent</td></tr>
+          <tr><td><strong>Confidence</strong></td><td>0.0 to 1.0 (how sure AI is)</td><td>OpenAI JSON: confidence</td></tr>
+          <tr><td><strong>AI Summary</strong></td><td>One-line lead summary</td><td>OpenAI JSON: summary</td></tr>
+          <tr><td><strong>Hot Lead?</strong></td><td>TRUE or FALSE</td><td>OpenAI JSON: hot_lead</td></tr>
+          <tr><td><strong>Status</strong></td><td>New / Contacted / Closed / Lost</td><td>You update this manually</td></tr>
+          <tr><td><strong>Notes</strong></td><td>Your follow-up notes</td><td>You fill this in</td></tr>
+        </tbody>
+      </table>
+      <p><strong>Connecting to Make.com:</strong> In your Google Sheets module (M6), click <strong>Add</strong> → authenticate with your Google account → select your spreadsheet and the "Leads" tab. Map each field from the JSON output to its matching column. Test by triggering a run — a new row should appear within seconds.</p>
+
+      <div class="callout">
+        <strong>Power tip:</strong> Add a conditional colour rule in Google Sheets: if the "Hot Lead?" column is TRUE, colour that row green. This gives you an instant visual dashboard when you open the sheet each morning.
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── STEP 6: Auto-Reply Messages ─── -->
+  <div class="step-card">
+    <div class="time-badge">⏱ 15 min</div>
+    <div class="step-card-header">
+      <div class="step-num-big">6</div>
+      <div>
+        <div class="step-card-title">Configure Auto-Reply Messages (per Intent)</div>
+        <div class="step-card-sub">Warm, personalised qualifying questions that feel human</div>
+      </div>
+    </div>
+    <div class="step-body">
+      <p>In each Router path (Module 5), set up a WhatsApp API HTTP POST to send a reply to the sender. Here are the ready-to-use templates for each intent:</p>
+
+      <div class="wa-conversation">
+        <div class="bubble-row">
+          <div>
+            <div class="bubble-label">Customer says (Buy intent detected)</div>
+            <div class="bubble incoming">Hi, I want to place an order for your products 🙏</div>
+          </div>
+        </div>
+        <div class="bubble-row right">
+          <div>
+            <div class="bubble outgoing">Hi! Thanks for reaching out 😊 We'd love to help you. To get started, could you tell us:<br><br>1️⃣ What product(s) are you interested in?<br>2️⃣ Roughly how many units do you need?<br>3️⃣ What's your expected delivery date?</div>
+            <div class="bubble-time">✓✓ Delivered</div>
+          </div>
+        </div>
+        <div class="bubble-row">
+          <div>
+            <div class="bubble-label">Customer says (Price intent detected)</div>
+            <div class="bubble incoming">What are your prices for bulk orders?</div>
+          </div>
+        </div>
+        <div class="bubble-row right">
+          <div>
+            <div class="bubble outgoing">Great question! Our pricing depends on quantity and product type. To send you an accurate quote, please share:<br><br>1️⃣ Which product category?<br>2️⃣ Approximate quantity?<br>3️⃣ Are you a new or returning customer?</div>
+            <div class="bubble-time">✓✓ Delivered</div>
+          </div>
+        </div>
+        <div class="bubble-row">
+          <div>
+            <div class="bubble-label">Customer says (Support intent detected)</div>
+            <div class="bubble incoming">My order still hasn't arrived. It's been 5 days.</div>
+          </div>
+        </div>
+        <div class="bubble-row right">
+          <div>
+            <div class="bubble outgoing">We're really sorry to hear that! 😟 Our team will look into this right away. Could you share your order number or the email you used to place the order? We'll get back to you shortly.</div>
+            <div class="bubble-time">✓✓ Delivered</div>
+          </div>
+        </div>
+      </div>
+      <p style="font-size: 12px; color: var(--ink-soft);">Spam messages receive no reply — the system silently logs them and moves on.</p>
+    </div>
+  </div>
+
+  <!-- ─── STEP 7: Test and Activate ─── -->
+  <div class="step-card">
+    <div class="time-badge">⏱ 15 min</div>
+    <div class="step-card-header">
+      <div class="step-num-big">7</div>
+      <div>
+        <div class="step-card-title">Test Every Intent, Then Go Live</div>
+        <div class="step-card-sub">Validate each of the 4 paths before switching to always-on</div>
+      </div>
+    </div>
+    <div class="step-body">
+      <p>Run through this checklist before going live. Test each intent from your personal phone to the WhatsApp business number:</p>
+
+      <ul class="checklist">
+        <li>Send "I want to order 50 units" → confirm intent = "buy", auto-reply arrives, row logged in Sheet, Slack/email alert fires</li>
+        <li>Send "How much does it cost for a bulk order?" → confirm intent = "price", qualifying questions sent, row logged</li>
+        <li>Send "My order number 1234 hasn't arrived" → confirm intent = "support", support reply sent, row logged, no alert</li>
+        <li>Send "Hi we offer SEO services click here" → confirm intent = "spam", no reply sent, row logged with spam tag</li>
+        <li>Open your Google Sheet — confirm all 4 test rows appear with correct data in every column</li>
+        <li>Check that Timestamp and Phone Number are populating correctly</li>
+        <li>Verify the hot_lead alert only fired for the buy-intent test message</li>
+      </ul>
+
+      <p style="margin-top: 12px;">Once all 7 checks pass:</p>
+      <ul>
+        <li>In Make.com, click the <strong>Scheduling toggle</strong> (bottom left of the Scenario editor) → set to <strong>Immediately / As data arrives</strong></li>
+        <li>Click <strong>Save</strong> — the scenario is now live and will run 24/7 on every incoming message</li>
+        <li>You will see the <strong>green indicator</strong> next to your Scenario name on the dashboard, confirming it is active</li>
+      </ul>
+
+      <div class="callout">
+        <strong>Go-live tip:</strong> Keep Make.com's "History" tab open for the first hour after going live. Every execution is logged there — you can see exactly what each message triggered, spot any errors in real time, and fix them before your customers notice.
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── MAKE.COM HELP CHANNELS ─── -->
+  <div style="background: #F0FDF4; border: 1px solid #A7F3D0; border-radius: var(--radius-lg); padding: 24px 28px; margin-top: 8px; margin-bottom: 8px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:16px;">
+      <span style="font-size:22px;">🆘</span>
+      <div>
+        <div style="font-weight:700; font-size:16px; color: var(--green-mid);">Still stuck? Make.com Help Channels</div>
+        <div style="font-size:13px; color: var(--ink-soft);">If you hit a wall during setup, these are the fastest ways to get unstuck</div>
+      </div>
+    </div>
+
+    <div class="help-grid">
+      <a href="https://www.make.com/en/help" target="_blank" class="help-card">
+        <div class="help-icon">📖</div>
+        <div>
+          <div class="help-title">Make.com Help Centre</div>
+          <div class="help-desc">Searchable documentation covering every module, setting, and feature — start here for most questions.</div>
+          <span class="help-link">make.com/en/help →</span>
+        </div>
+      </a>
+      <a href="https://community.make.com" target="_blank" class="help-card">
+        <div class="help-icon">💬</div>
+        <div>
+          <div class="help-title">Make.com Community Forum</div>
+          <div class="help-desc">Thousands of users and Make staff answer questions daily. Search before posting — your exact issue has likely been solved.</div>
+          <span class="help-link">community.make.com →</span>
+        </div>
+      </a>
+      <a href="https://www.make.com/en/academy" target="_blank" class="help-card">
+        <div class="help-icon">🎓</div>
+        <div>
+          <div class="help-title">Make.com Academy</div>
+          <div class="help-desc">Free beginner-to-advanced video courses on building scenarios, using webhooks, routers, and more.</div>
+          <span class="help-link">make.com/en/academy →</span>
+        </div>
+      </a>
+      <a href="https://www.youtube.com/@make_hq" target="_blank" class="help-card">
+        <div class="help-icon">▶️</div>
+        <div>
+          <div class="help-title">Make.com YouTube Channel</div>
+          <div class="help-desc">Official step-by-step video tutorials. Search "Make.com webhook" or "Make.com OpenAI" for this exact use case.</div>
+          <span class="help-link">youtube.com/@make_hq →</span>
+        </div>
+      </a>
+      <a href="https://www.make.com/en/contact" target="_blank" class="help-card">
+        <div class="help-icon">🎧</div>
+        <div>
+          <div class="help-title">Make.com Support (Paid Plans)</div>
+          <div class="help-desc">Core plan and above includes email support with response times under 24 hours. Submit a ticket with screenshots of your Scenario.</div>
+          <span class="help-link">make.com/en/contact →</span>
+        </div>
+      </a>
+      <div class="help-card" style="cursor:default;">
+        <div class="help-icon">🔍</div>
+        <div>
+          <div class="help-title">Search YouTube for Your Error</div>
+          <div class="help-desc">Copy the exact error message Make.com shows → paste it into YouTube search with "Make.com" prepended. 90% of errors have a solved walkthrough video.</div>
+          <span class="help-link" style="color:var(--ink-soft);">e.g. "Make.com 422 WhatsApp API error"</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="help-notice" style="margin-top: 4px;">
+      <strong>Fastest path to help:</strong> When posting in the Community Forum or submitting a support ticket, always include: (1) a screenshot of the failing module, (2) the error message in full, and (3) the data that triggered it. This cuts resolution time from days to hours.
+    </div>
+  </div>
+
+  <!-- INTENT CLASSIFICATION -->
+  <div class="section-label">
+    <div class="section-num">3</div>
+    <h2 class="section-title">How AI Classifies Intent</h2>
+  </div>
+  <p style="font-size:14px; color: var(--ink-soft); margin-bottom: 16px;">The system recognises 4 message intents and routes each to a different action.</p>
+
+  <div class="intent-grid">
+    <div class="intent-card buy">
+      <div class="intent-tag">🔥 Buy Intent</div>
+      <div class="intent-title">Ready to Purchase</div>
+      <div class="intent-desc">Messages like: "I want to order", "Do you have X available?", "How do I buy?", "Can I place an order?"</div>
+      <div class="intent-action">→ Qualify + Alert Owner</div>
+    </div>
+    <div class="intent-card price">
+      <div class="intent-tag">💰 Price Inquiry</div>
+      <div class="intent-title">Asking About Cost</div>
+      <div class="intent-desc">Messages like: "How much is X?", "What's your pricing?", "Do you offer discounts for bulk?"</div>
+      <div class="intent-action">→ Qualify + Log Lead</div>
+    </div>
+    <div class="intent-card support">
+      <div class="intent-tag">🛠 Support</div>
+      <div class="intent-title">Existing Customer Issue</div>
+      <div class="intent-desc">Messages like: "My order hasn't arrived", "I got the wrong item", "How do I return this?"</div>
+      <div class="intent-action">→ Route to Support Queue</div>
+    </div>
+    <div class="intent-card spam">
+      <div class="intent-tag">🚫 Spam / Irrelevant</div>
+      <div class="intent-title">Not a Lead</div>
+      <div class="intent-desc">Promotional messages, gibberish, wrong numbers, broadcast forwards, solicitations.</div>
+      <div class="intent-action">→ Log Only, No Reply</div>
+    </div>
+  </div>
+
+  <!-- HOT LEAD ALERTS -->
+  <div class="section-label">
+    <div class="section-num">4</div>
+    <h2 class="section-title">Hot Lead Alert Rules (When You Get Notified)</h2>
+  </div>
+  <p style="font-size:14px; color: var(--ink-soft); margin-bottom: 16px;">You shouldn't be pinged for every message — only the ones that matter.</p>
+
+  <div style="background: white; border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 8px 24px; margin-bottom: 20px;">
+    <div class="alert-rule">
+      <div class="alert-dot hot"></div>
+      <div>
+        <div class="rule-title">🔴 Instant Alert — Send Now</div>
+        <div class="rule-desc">Intent = "buy" AND confidence ≥ 0.8. This person is ready to purchase. You get a Slack ping / email with their number, message summary, and a direct link to open the chat.</div>
+      </div>
+    </div>
+    <div class="alert-rule">
+      <div class="alert-dot warm"></div>
+      <div>
+        <div class="rule-title">🟡 Daily Digest — Price Inquiries</div>
+        <div class="rule-desc">Intent = "price". Compiled into a daily email at 8am with all price inquiries from the last 24 hours. Includes AI-generated summary per lead.</div>
+      </div>
+    </div>
+    <div class="alert-rule">
+      <div class="alert-dot"></div>
+      <div>
+        <div class="rule-title">🟢 No Alert — Check Sheet When Ready</div>
+        <div class="rule-desc">Intent = "support" or "spam". Logged to Google Sheets. The support team reviews the support queue. Spam is filtered, not shown.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="callout">
+    <strong>Pro tip:</strong> In Make.com, use a <strong>Filter</strong> module before the alert step: only continue if <code>{{hot_lead}} = true</code>. This prevents alert fatigue completely.
+  </div>
+
+  <!-- EXPECTED RESULTS -->
+  <div class="section-label">
+    <div class="section-num">5</div>
+    <h2 class="section-title">What to Expect (KPIs After 30 Days)</h2>
+  </div>
+
+  <div class="kpi-grid">
+    <div class="kpi-card">
+      <div class="kpi-num">&lt; 5s</div>
+      <div class="kpi-label">Response time<br>(was hours)</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-num">60%</div>
+      <div class="kpi-label">Reduction in<br>manual filtering</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-num">3–4×</div>
+      <div class="kpi-label">More qualified leads<br>actioned per day</div>
+    </div>
+  </div>
+
+  <table class="data-table">
+    <thead>
+      <tr><th>Metric</th><th>Before</th><th>After (Expected)</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Response time to new lead</td><td>2–8 hours</td><td>Under 5 seconds</td></tr>
+      <tr><td>Leads manually reviewed</td><td>100% (everything)</td><td>&lt;20% (hot leads only)</td></tr>
+      <tr><td>Spam interruptions per day</td><td>10–20 messages</td><td>0 (auto-filtered)</td></tr>
+      <tr><td>Lead data captured in CRM</td><td>Inconsistent / manual</td><td>100% automatic</td></tr>
+      <tr><td>Time spent on lead triage</td><td>1–2 hours/day</td><td>5–10 min/day</td></tr>
+    </tbody>
+  </table>
+
+  <hr class="divider">
+
+  <!-- TROUBLESHOOTING -->
+  <div class="section-label">
+    <div class="section-num">6</div>
+    <h2 class="section-title">Troubleshooting &amp; FAQs</h2>
+  </div>
+
+  <div>
+    <div class="faq-item">
+      <div class="faq-q">WhatsApp messages aren't hitting my Make.com webhook</div>
+      <div class="faq-a">Double-check that you subscribed to the "messages" field in Meta's Webhook configuration panel. Make sure the webhook URL is publicly accessible and that your Make.com scenario is in "Run Once" listening mode when you test. If Meta says "verification failed", check that your scenario has actually been saved and activated.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">OpenAI keeps returning invalid JSON or extra text</div>
+      <div class="faq-a">Ensure "Respond ONLY with valid JSON. No preamble. No explanation." is the last line of your system prompt. Also set temperature to 0.2 and max_tokens to 300. In Make.com, use the JSON → Parse JSON module after the HTTP call rather than manually extracting text — it handles edge cases cleanly.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">The AI is misclassifying some intents — e.g. marking a buyer as "price"</div>
+      <div class="faq-a">Add 2–3 example messages per intent to the system prompt as few-shot examples (e.g. "Example buy message: 'I want to order 10 units of product A'"). You can also lower the hot_lead confidence threshold from 0.8 to 0.7 if you're missing genuine buyers. Review your Google Sheet weekly and spot-check confidence scores.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Can I use this with my existing CRM instead of Google Sheets?</div>
+      <div class="faq-a">Yes. Make.com has native modules for HubSpot, Zoho, Pipedrive, Salesforce, and Airtable. Replace the Google Sheets module with your CRM's "Create Contact" or "Create Lead" module and map the same fields from the OpenAI JSON output.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Will customers know they're talking to a bot?</div>
+      <div class="faq-a">Not by default — the replies are designed to sound human and warm. You can optionally add a closing line like "A member of our team will follow up shortly!" if you prefer transparency, which is often a trust-builder for small businesses anyway.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">What does this cost to run per month?</div>
+      <div class="faq-a">Make.com free tier handles ~1,000 operations/month (suitable for testing). The Core plan at $9/month covers 10,000 operations, which handles roughly 1,400+ WhatsApp messages per month (each message uses ~7 operations). OpenAI GPT-4o Mini costs approximately $0.001 per classification. At 500 messages/month, total running cost is under $10/month.</div>
+    </div>
+  </div>
+
+</div><!-- /main -->
+
+<!-- FOOTER -->
+<div class="footer">
+  Built with <strong>WhatsApp API · Make.com · OpenAI · Google Sheets</strong> · Save Time Systems Playbook
+  <div class="disc-footer">Affiliate Disclosure: This document contains an affiliate link to Make.com. We may earn a commission if you sign up via our link, at no cost to you.</div>
+</div>
+
+</body>
+</html>
+
+
+
+
+
